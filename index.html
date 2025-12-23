@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSpecs Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script type="module" defer src="index.js"></script>
+</head>
+
+<body class="h-100 bg-danger">
+    <main style="min-height:100dvh;" class="container bg-light mt-3 rounded-2 pb-4 mb-5">
+        <h1 class="text-center mb-4 p-4 border-bottom border-danger">TechSpecs Manager</h1>
+        <div class="row">
+            <aside class="col-12 col-md-6 d-flex align-items-center flex-column ">
+                <h2 class="text-center mb-3">TechSpecs Manager</h2>
+                <form id="form" class="w-75">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nombre del servidor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpu">Núcleos de procesador</label>
+                        <select class="form-select" aria-label="RAM" id="cpu" required id="cpu">
+                            <option selected disabled data-price="0">Seleccionar</option>
+                            <option value="2" data-price="40">2</option>
+                            <option value="4" data-price="80">4</option>
+                            <option value="6" data-price="140">6</option>
+                            <option value="8" data-price="270">8</option>
+                            <option value="12" data-price="300">12</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ram">Memoria RAM</label>
+                        <select class="form-select" aria-label="RAM" id="ram" required>
+                            <option selected disabled data-price="0">Seleccionar</option>
+                            <option value="4" data-price="50">4 GB</option>
+                            <option value="8" data-price="120">8 GB</option>
+                            <option value="16" data-price="150">16 GB</option>
+                            <option value="32" data-price="210">32 GB</option>
+                            <option value="64" data-price="270">64 GB</option>
+                        </select>
+                    </div>
+                    <div class="pt-2">
+                        <div class="pb-1" for="storage">Almacenamiento</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="storage" id="ssd" value="SSD"
+                                data-price="200">
+                            <label class="form-check-label" for="ssd">SSD</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="storage" id="hdd" value="HDD"
+                                data-price="300" required>
+                            <label class="form-check-label" for="hdd">HDD</label>
+                        </div>
+                    </div>
+                    <button id="addbtn" type="submit" class="btn btn-success mt-2">Añadir</button>
+                </form>
+                <h2 id="price" class="text-center mt-4">Total: </h2>
+            </aside>
+            <section class="col-12 col-md-6 mt-4 mt-md-0">
+                <h2 class="text-center">Servidores</h2>
+                <div id="cards" class="d-flex flex-column align-items-center mt-4 mt-md-0 pt-3"></div>
+
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
