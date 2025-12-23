@@ -120,7 +120,7 @@ async function deleteServer(id){
             method: 'DELETE' });
         if (!response.ok) throw new Error('Error al eliminar');
         const serverDeleted = await response.json();
-        console.log('Servidor eliminado correctamente:', serverDeleted.nombre);
+        console.log('Servidor eliminado correctamente:', serverDeleted.name);
     } catch (err) {
         console.error(err);
     }
